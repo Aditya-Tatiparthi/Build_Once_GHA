@@ -4,7 +4,7 @@ WORKDIR /app
 
 ADD ./app.py adityatatiparthi/python_notebook
 
-RUN pip install --trusted-host pypi.python.org -r requirment.txt
+# RUN pip install --trusted-host pypi.python.org -r requirment.txt
 
 EXPOSE 8080
 
