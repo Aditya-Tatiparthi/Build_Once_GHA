@@ -66,13 +66,13 @@ jobs:
       - name: Deploy
         run: echo I am deploying! 
 
-  DeployProd:
-    name: Deploy to Production 
-    needs: [DeployStaging]
-    runs-on: ubuntu-latest
-    environment: 
-      name: Prod
+#   DeployProd:
+#     name: Deploy to Production 
+#     needs: [DeployStaging]
+#     runs-on: ubuntu-latest
+#     environment: 
+#       name: Prod
       
-    steps:
-      - name: Deploy
-        run: echo I am deploying! 
+#     steps:
+#       - name: Deploy
+#         run: echo I am deploying! 
