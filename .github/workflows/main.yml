@@ -6,7 +6,7 @@ env:
 #    REGISTRY : "https://hub.docker.com/repository/docker/adityareddy369/pythondemo"
 #    REGISTRY_CREDENTIAL : ${{secrets.DOCKER_USERNAME}} &&  ${{secrets.DOCKER_PASSWORD}}  
 jobs:
-  lint:
+  Build:
     runs-on : ubuntu-18.04
     steps:
     -  uses: actions/checkout@v1
@@ -44,3 +44,35 @@ jobs:
           cache-to: type=inline
           tags: adityatatiparthi/python_notebook
 #           build-args: PROFILE=nectar,ARG2=test
+  DeployDev:
+    name: Deploy to Dev 
+    needs: [Build]
+    runs-on: ubuntu-latest
+    environment: 
+      name: Development
+      
+    steps:
+      - name: Deploy
+        run: echo I am deploying! 
+
+  DeployStaging:
+    name: Deploy to Staging 
+    
+    needs: [Build]
+    runs-on: ubuntu-latest
+    environment: 
+      name: Staging
+    steps:
+      - name: Deploy
+        run: echo I am deploying! 
+
+  DeployProd:
+    name: Deploy to Production 
+    needs: [DeployStaging]
+    runs-on: ubuntu-latest
+    environment: 
+      name: Prod
+      
+    steps:
+      - name: Deploy
+        run: echo I am deploying! 
