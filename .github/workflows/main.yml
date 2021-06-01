@@ -47,7 +47,7 @@ jobs:
   DeployDev:
     name: Deploy to Dev 
     needs: [Build]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     environment: 
       name: Development
       
@@ -59,7 +59,7 @@ jobs:
     name: Deploy to Staging 
     
     needs: [Build]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     environment: 
       name: Staging
     steps:
