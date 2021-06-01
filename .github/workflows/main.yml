@@ -40,7 +40,7 @@ jobs:
           file: ./Dockerfile
           pull: true
           push: true
-          cache-from: type=registry,ref=hustakin/hello-world-docker-action:latest
+          cache-from: type=registry,ref=adityatatiparthi/python_notebook          
           cache-to: type=inline
-          tags: hustakin/hello-world-docker-action:latest
-          build-args: PROFILE=nectar,ARG2=test
+          tags: adityatatiparthi/python_notebook
+#           build-args: PROFILE=nectar,ARG2=test
