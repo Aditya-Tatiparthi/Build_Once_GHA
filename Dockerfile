@@ -2,7 +2,7 @@ FROM python:3.7-slim
 
 WORKDIR /app
 
-ADD ./app
+ADD ./app adityatatiparthi/python_notebook
 
 RUN pip install --trusted-host pypi.python.org -r requirments.txt
 
