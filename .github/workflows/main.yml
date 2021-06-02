@@ -28,7 +28,7 @@ jobs:
        run: |
          python - m unitest  --verbose --failfast
 
-    - run: cp -r dist ${{ env.TARGET_DIRECTORY }}
+    - run: cp -r build ${{ env.TARGET_DIRECTORY }}
     - name: Publish Artifact Notebook
       uses: actions/upload-artifact@v2
       with:
