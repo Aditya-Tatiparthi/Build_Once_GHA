@@ -2,7 +2,7 @@ FROM python:3.7-slim
 
 WORKDIR /app
 
-ADD ./app.py adityatatiparthi/pythondemo
+ADD ./wheel.py adityatatiparthi/pythondemo
 
 # RUN pip install --trusted-host pypi.python.org -r requirment.txt
 RUN pip install wheel
@@ -14,4 +14,4 @@ ENTRYPOINT ["python"]
 
 HEALTHCHECK CMD curl --fail http://localhost:8080/ || exit 1
 
-CMD ["/app/app.py"]
+CMD ["/app/wheel.py"]
