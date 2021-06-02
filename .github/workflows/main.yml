@@ -19,7 +19,7 @@ jobs:
     -  name: Building wheel file
        run: |
          python -m pip install --upgrade pip
-         
+         python setup sdist bdist_wheel
          ls
          
     -  name: Lint code
@@ -29,7 +29,7 @@ jobs:
        run: |
          python - m unitest  --verbose --failfast
 
-    - run: echo dist  ${{ env.TARGET_DIRECTORY }}
+#     - run: echo ${{dist}} ${{ env.TARGET_DIRECTORY }}
     - name: Publish Artifact Notebook
       uses: actions/upload-artifact@v2
       with:
