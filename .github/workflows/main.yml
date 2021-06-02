@@ -72,6 +72,7 @@ jobs:
       - name: Deploy
         run: |
           ls target_directory/
+          pip install hive-0.0.1-py3-none-any.whl
           echo I am deploying! 
 
   DeployStaging:
