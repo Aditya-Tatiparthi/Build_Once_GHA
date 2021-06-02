@@ -16,6 +16,8 @@ jobs:
        run: |
           pip install  --quiet --requirement requirement.txt
           pip install check-wheel-contents
+    -  name: python setup.py bdist_wheel
+    
     -  name: Lint code
        run: |
          flake8  
