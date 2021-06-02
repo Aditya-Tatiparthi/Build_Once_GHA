@@ -40,9 +40,9 @@ jobs:
           file: ./Dockerfile
           pull: true
           push: true
-          cache-from: type=registry,ref=adityatatiparthi/python_notebook          
+          cache-from: type=registry,ref=adityatatiparthi/pythondemo          
           cache-to: type=inline
-          tags: adityatatiparthi/python_notebook
+          tags: adityatatiparthi/pythondemo
 #           build-args: PROFILE=nectar,ARG2=test
   DeployDev:
     name: Deploy to Dev 
