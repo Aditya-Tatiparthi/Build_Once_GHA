@@ -24,7 +24,7 @@ jobs:
 
     - run: echo python > ${{ env.TARGET_DIRECTORY }}
     - name: Publish Artifact Notebook
-    - uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v2
       with:
          name: ${{ env.ARTIFACT_NAME }}
          path: ${{ env.TARGET_DIRECTORY }}
