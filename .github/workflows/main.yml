@@ -24,7 +24,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
          name: ${{ env.ARTIFACT_NAME }}
-         path: ${{ env.TARGET_DIRECTORY }}/${{ env.ARTIFACT_NAME }}
+         path: ${{ env.TARGET_DIRECTORY }}
 
 #     - name: Set up Docker Buildx
 #       uses: docker/setup-buildx-action@v1
