@@ -58,29 +58,48 @@ jobs:
     runs-on: ubuntu-18.04
     environment: 
       name: Development
-      
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Dowload Build Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: ${{ env.ARTIFACT_NAME }}
+          path: ${{ env.TARGET_DIRECTORY }}
       - name: Deploy
         run: echo I am deploying! 
 
   DeployStaging:
     name: Deploy to Staging 
-    
     needs: [Build]
     runs-on: ubuntu-18.04
     environment: 
       name: Staging
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Dowload Build Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: ${{ env.ARTIFACT_NAME }}
+          path: ${{ env.TARGET_DIRECTORY }}
       - name: Deploy
         run: echo I am deploying! 
 
 #   DeployProd:
 #     name: Deploy to Production 
 #     needs: [DeployStaging]
-#     runs-on: ubuntu-latest
+#     runs-on: ubuntu-18.04
 #     environment: 
 #       name: Prod
       
 #     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
+#       - name: Dowload Build Artifact
+#         uses: actions/download-artifact@v2
+#         with:
+#           name: ${{ env.ARTIFACT_NAME }}
+#           path: ${{ env.TARGET_DIRECTORY }}
 #       - name: Deploy
 #         run: echo I am deploying! 
