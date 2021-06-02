@@ -5,7 +5,7 @@ WORKDIR /app
 ADD ./app.py adityatatiparthi/python_notebook
 
 # RUN pip install --trusted-host pypi.python.org -r requirment.txt
-
+RUN pip install wheel
 EXPOSE 8080
 
 # excute the Flask app
