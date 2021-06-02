@@ -22,12 +22,28 @@ jobs:
          python - m unitest  --verbose --failfast
 #     - run: mkdir -p path/to/artifact
 
-    - run: echo python > ${{ env.TARGET_DIRECTORY }}
-    - name: Publish Artifact Notebook
+#     - run: echo python > ${{ env.TARGET_DIRECTORY }}
+#     - name: Publish Artifact Notebook
+#       uses: actions/upload-artifact@v2
+#       with:
+#          name: ${{ env.ARTIFACT_NAME }}
+#          path: ${{ env.TARGET_DIRECTORY }}
+    - name: Step 1 - Create a temporary artifact downloads folder
+      run: mkdir downloads
+        
+    - name: step 2 - Add artifacts to publish to the temp folder
+      run: |
+          cd downloads
+          echo 'alpha'    > alpha.html
+          echo 'bravo'    > bravo.html
+          echo 'charlie'  > charlie.html
+          cd ..
+    
+    - name: Step 3 - Use the Upload Artifact GitHub Action
       uses: actions/upload-artifact@v2
-      with:
-         name: ${{ env.ARTIFACT_NAME }}
-         path: ${{ env.TARGET_DIRECTORY }}
+      with: 
+          name: assets-for-download
+          path: downloads
 
 #     - name: Set up Docker Buildx
 #       uses: docker/setup-buildx-action@v1
