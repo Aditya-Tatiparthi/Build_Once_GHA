@@ -18,7 +18,7 @@ jobs:
           pip install check-wheel-contents
     -  name: Building wheel file
        run: |
-         python setup sdist bdist_wheel
+         python setup.py sdist bdist_wheel
          python -m pip install --upgrade pip
          ls
     -  name: Lint code
