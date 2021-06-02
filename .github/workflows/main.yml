@@ -28,7 +28,7 @@ jobs:
        run: |
          python - m unitest  --verbose --failfast
 
-    - run: echo ${{dist}} > ${{ env.TARGET_DIRECTORY }}
+    - run: echo dist > ${{ env.TARGET_DIRECTORY }}
     - name: Publish Artifact Notebook
       uses: actions/upload-artifact@v2
       with:
