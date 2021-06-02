@@ -6,9 +6,9 @@
 
 # APP = Flask(__name__, template_folder='templates')
 # MODEL = Flask.load(open('model.pkl', 'rb'))
-import setuptools 
+import setuptools
 with open("README.md", "r") as fh:
-    long_description = fh.read() 
+    long_description = fh.read()
 setuptools.setup(
     name="hive",
     version="0.0.1",
