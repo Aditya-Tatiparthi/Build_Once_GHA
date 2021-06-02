@@ -71,7 +71,7 @@ jobs:
           path: ${{ env.TARGET_DIRECTORY }}
       - name: Deploy
         run: |
-          ls traget_directory/
+          ls target_directory/
           echo I am deploying! 
 
   DeployStaging:
