@@ -1,10 +1,10 @@
 name: Pipeline
 
 on: [push]
-# env: 
+env: 
 #   CONTENT_PATH: ${{ github.workspace }}/test_directory
-#   TARGET_DIRECTORY: ${{ github.workspace }}/target_directory 
-#   ARTIFACT_NAME: Notebook   
+  TARGET_DIRECTORY: ${{ github.workspace }}/target_directory 
+  ARTIFACT_NAME: Notebook   
 jobs:
   Build:
     runs-on : ubuntu-18.04
@@ -24,30 +24,13 @@ jobs:
     -  name: Run unit tests
        run: |
          python - m unitest  --verbose --failfast
-#     - run: mkdir -p path/to/artifact
 
-#     - run: echo python > ${{ env.TARGET_DIRECTORY }}
-#     - name: Publish Artifact Notebook
-#       uses: actions/upload-artifact@v2
-#       with:
-#          name: ${{ env.ARTIFACT_NAME }}
-#          path: ${{ env.TARGET_DIRECTORY }}
-    - name: Step 1 - Create a temporary artifact downloads folder
-      run: mkdir downloads
-        
-    - name: step 2 - Add artifacts to publish to the temp folder
-      run: |
-          cd downloads
-          echo 'alpha'    > alpha.html
-          echo 'bravo'    > bravo.html
-          echo 'charlie'  > charlie.html
-          cd ..
-    
-    - name: Step 3 - Use the Upload Artifact GitHub Action
+    - run: echo python > ${{ env.TARGET_DIRECTORY }}
+    - name: Publish Artifact Notebook
       uses: actions/upload-artifact@v2
-      with: 
-          name: assets-for-download
-          path: downloads
+      with:
+         name: ${{ env.ARTIFACT_NAME }}
+         path: ${{ env.TARGET_DIRECTORY }}
 
 #     - name: Set up Docker Buildx
 #       uses: docker/setup-buildx-action@v1
