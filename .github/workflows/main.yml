@@ -70,7 +70,9 @@ jobs:
           name: ${{ env.ARTIFACT_NAME }}
           path: ${{ env.TARGET_DIRECTORY }}
       - name: Deploy
-        run: echo I am deploying! 
+        run: |
+          ls
+          echo I am deploying! 
 
   DeployStaging:
     name: Deploy to Staging 
