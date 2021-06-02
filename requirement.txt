@@ -8,3 +8,4 @@ pip
 pylint
 pytest
 pytest-flask
+wheel
